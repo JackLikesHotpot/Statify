@@ -3,7 +3,6 @@ interface ProfileProps {
   profileImage: string;
 }
 
-
 const Profile: React.FC<ProfileProps> = ({ displayName, profileImage }) => {
   return  (
     <div className="text-center p-6 bg-white shadow-md rounded-lg">
