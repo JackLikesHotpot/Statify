@@ -5,6 +5,14 @@ import { getArtists } from '../hooks/getArtists';
 import Profile from '../components/Profile/Profile';
 import Artist from '../components/Artist/Artist';
 
+import { Montserrat } from 'next/font/google'
+ 
+const inter = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+
 interface ProfileProps {
   profileName: string;
   profileImage: string;
@@ -44,7 +52,7 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists}) => {
   return (
     <div>
       <Profile displayName={profileName} profileImage={profileImage} />
-      <div className='text-center justify-center items-center h-screen text-red-600'>
+      <div className='artistList text-center justify-center items-center w-2/3'>
         {artists.map((artist) => (
           <div>
             <Artist
