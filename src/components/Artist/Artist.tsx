@@ -1,10 +1,9 @@
 interface ArtistProps {
   artistName: string,
-  artistURL: string;
   artistImage: string;
   followers: number;
   genres: string[];
-  id: number;
+  id: string;
 }
 
 const formatGenres = (genre: string) => {
@@ -21,14 +20,15 @@ const formatGenres = (genre: string) => {
   return `${firstLetter}${genre.slice(1)}`
 }
 
-const Artist: React.FC<ArtistProps> = ({ artistName, artistURL, artistImage, followers, genres, id }) => {
+const Artist: React.FC<ArtistProps> = ({ artistName, artistImage, followers, genres, id }) => {
+  
   return  (
-    <div className='artist border-2 border-rose-600 items-center justify-center flex width-4/6' key={id}>
-      <div className='artistImage object-cover flex-1'><img src={artistImage} width='40%' height='40%'></img></div>
+    <div className='artist border-2 border-black bg-green-600 text-white items-center justify-center flex rounded-xl h-32' key={id}>
+      <div className='artistImage object-cover flex-1 p-2'>{artistImage ? <img className='rounded-xl' src={artistImage} height='100' width='100'/> : ''}</div>
       <div className='artistDetails flex-1'>
-      <div className='artistName font-bold text-4xl'><p><a href={artistURL}>{artistName}</a></p></div>
+      <div className='artistName font-bold text-4xl'><a href={`spotify:artist:${id}`} target='_blank'>{artistName}</a></div>
+        <div className='artistGenres font-semibold'>{genres.length > 0 && genres.map(formatGenres).join(', ')}</div>
         <div className='artistFollowers'><p>{followers} followers</p></div>
-        <div className='artistGenres'>{genres.length > 0 && genres.map(formatGenres).join(', ')}</div>
         </div>
         </div>
   );

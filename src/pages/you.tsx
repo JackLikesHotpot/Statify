@@ -20,13 +20,15 @@ interface ProfileProps {
 
 interface Image {
   url: string;
+  height: number;
+  width: number;
 }
 
 interface Artist {
+  images: Image[];
   name: string;
   genres: string[];
-  images: Image[];
-  id: number;
+  id: string;
   popularity: number;
   external_urls: Link;
   followers: Followers;
@@ -37,7 +39,7 @@ interface ArtistProps {
 }
 
 interface Link {
-  href: string;
+  spotify: string;
 }
 
 interface Followers {
@@ -52,20 +54,23 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists}) => {
   return (
     <div>
       <Profile displayName={profileName} profileImage={profileImage} />
-      <div className='artistList text-center justify-center items-center w-2/3'>
-        {artists.map((artist) => (
-          <div>
-            <Artist
-              id={artist.id}
-              artistName={artist.name}
-              artistURL={artist.external_urls.href}
-              artistImage={artist.images[1].url}
-              followers={artist.followers.total}
-              genres={artist.genres}
-              />
-          </div>
-        ))}
+      <div className='flex'>
+      <div className='column w-1/4 bg-black'></div>
+      <div className='artistList w-1/2 bg-black text-center place-content-center justify-center items-center'>
+      {artists.map((artist) => (
+        <div>
+          <Artist
+            id={artist.id}
+            artistName={artist.name}
+            artistImage={artist.images && artist.images[1] ? artist.images[1].url : ''}
+            followers={artist.followers.total}
+            genres={artist.genres}
+            />
+        </div>
+      ))}
       </div>
+      <div className='column w-1/4 bg-black'></div>
+    </div>
     </div>
   );
 };
