@@ -1,3 +1,5 @@
+import styles from './Profile.module.css'
+
 interface ProfileProps {
   displayName: string,
   profileImage: string;
@@ -5,12 +7,11 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ displayName, profileImage }) => {
   return  (
-    <div className="text-center p-6 bg-white shadow-md rounded-lg">
+    <div className={styles['profile-top']}>
        <h1>User Profile</h1>
-      <img
+      <img className={styles['profile-image']}
         src={profileImage}
         alt={`${displayName}'s profile`}
-        style={{ borderRadius: '50%', width: '150px', height: '150px' }}
       />
       <h2>{displayName}</h2>
     </div>

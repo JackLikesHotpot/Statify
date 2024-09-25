@@ -1,0 +1,8 @@
+/* profile.module.css */
+.profile-top {
+  @apply text-center p-6 bg-white shadow-md rounded-lg;
+}
+
+.profile-image {
+  @apply rounded-full w-[150px] h-[150px]
+}

@@ -1,3 +1,5 @@
+import styles from './Artist.module.css'
+
 interface ArtistProps {
   artistName: string,
   artistImage: string;
@@ -23,11 +25,11 @@ const formatGenres = (genre: string) => {
 const Artist: React.FC<ArtistProps> = ({ artistName, artistImage, followers, genres, id }) => {
   
   return  (
-    <div className='artist border-2 border-black bg-green-600 text-white items-center justify-center flex rounded-xl h-32' key={id}>
-      <div className='artistImage object-cover flex-1 p-2'>{artistImage ? <img className='rounded-xl' src={artistImage} height='100' width='100'/> : ''}</div>
-      <div className='artistDetails flex-1'>
-      <div className='artistName font-bold text-4xl'><a href={`spotify:artist:${id}`} target='_blank'>{artistName}</a></div>
-        <div className='artistGenres font-semibold'>{genres.length > 0 && genres.map(formatGenres).join(', ')}</div>
+    <div className={styles['artist-card']} key={id}>
+      <div className={styles['artist-image']}>{artistImage ? <img className='rounded-xl' src={artistImage} height='100' width='100'/> : ''}</div>
+      <div className={styles['artist-details']}>
+      <div className={styles['artist-name']}><a href={`spotify:artist:${id}`} target='_blank'>{artistName}</a></div>
+        <div className={styles['artist-genre']}>{genres.length > 0 && genres.map(formatGenres).join(', ')}</div>
         <div className='artistFollowers'><p>{followers} followers</p></div>
         </div>
         </div>

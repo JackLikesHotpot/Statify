@@ -1,0 +1,12 @@
+/* You.module.css */
+.page {
+  @apply flex min-h-screen bg-black;
+}
+
+.list {
+  @apply flex-1 w-3/5 text-center place-content-center justify-center items-center
+}
+
+.column {
+  @apply flex-1 w-1/5;
+}

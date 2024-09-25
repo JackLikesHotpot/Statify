@@ -4,9 +4,14 @@ import { getArtists } from '../hooks/getArtists';
 
 import Profile from '../components/Profile/Profile';
 import Artist from '../components/Artist/Artist';
+import Switch from '../components/Switch/Switch'
 
+import styles from '../styles/You.module.css'
 import { Montserrat } from 'next/font/google'
- 
+
+import React, { useState } from 'react'
+
+
 const inter = Montserrat({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -48,15 +53,21 @@ interface Followers {
 
 interface PageProps extends ProfileProps, ArtistProps {}
 
-
 const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists}) => {
+
+  const [isBoxChecked, setBoxChecked] = useState<boolean>(false);
+
+  const handleCheckboxToggle = (isChecked: boolean) => {
+    setBoxChecked(isChecked); // Update the parent's state based on the child's request
+  };
 
   return (
     <div>
       <Profile displayName={profileName} profileImage={profileImage} />
-      <div className='flex'>
-      <div className='column w-1/4 bg-black'></div>
-      <div className='artistList w-1/2 bg-black text-center place-content-center justify-center items-center'>
+      <Switch isChecked={isBoxChecked} onToggle={handleCheckboxToggle}/>
+      <div className={styles['page']}>
+      <div className={styles['column']}></div>
+      <div className={styles['list']}>
       {artists.map((artist) => (
         <div>
           <Artist
@@ -69,7 +80,7 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists}) => {
         </div>
       ))}
       </div>
-      <div className='column w-1/4 bg-black'></div>
+      <div className={styles['column']}></div>
     </div>
     </div>
   );
