@@ -1,22 +1,33 @@
 import { GetServerSideProps } from 'next';
 import { getProfile } from '../hooks/getProfile'
 import { getArtists } from '../hooks/getArtists';
+import { getTracks } from '../hooks/getTracks';
 
 import Profile from '../components/Profile/Profile';
 import Artist from '../components/Artist/Artist';
-import Switch from '../components/Switch/Switch'
+import Switch from '../components/Switch/Switch';
+import Track from '../components/Track/Track';
 
 import styles from '../styles/You.module.css'
 import { Montserrat } from 'next/font/google'
 
 import React, { useState } from 'react'
 
-
 const inter = Montserrat({
   subsets: ['latin'],
   variable: '--font-inter',
 })
 
+interface Track {
+  name: string;
+  id: string;
+  uri: string;
+  popularity: number;
+  external_urls: Link;
+  album: string[];
+  duration_ms: number;
+  artist: string[];
+}
 
 interface ProfileProps {
   profileName: string;
@@ -39,6 +50,10 @@ interface Artist {
   followers: Followers;
 }
 
+interface TrackProps {
+  tracks: Track[];
+}
+
 interface ArtistProps {
   artists: Artist[];
 }
@@ -51,9 +66,9 @@ interface Followers {
   total: number;
 }
 
-interface PageProps extends ProfileProps, ArtistProps {}
+interface PageProps extends ProfileProps, ArtistProps, TrackProps {}
 
-const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists}) => {
+const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists, tracks}) => {
 
   const [isBoxChecked, setBoxChecked] = useState<boolean>(false);
 
@@ -65,23 +80,46 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists}) => {
     <div>
       <Profile displayName={profileName} profileImage={profileImage} />
       <Switch isChecked={isBoxChecked} onToggle={handleCheckboxToggle}/>
-      <div className={styles['page']}>
-      <div className={styles['column']}></div>
-      <div className={styles['list']}>
-      {artists.map((artist) => (
-        <div>
-          <Artist
-            id={artist.id}
-            artistName={artist.name}
-            artistImage={artist.images && artist.images[1] ? artist.images[1].url : ''}
-            followers={artist.followers.total}
-            genres={artist.genres}
-            />
+      {isBoxChecked ? (
+        <div className={styles['page']}>
+        <div className={styles['column']}></div>
+        <div className={styles['list']}>
+        {artists.map((artist) => (
+          <div>
+            <Artist
+              id={artist.id}
+              artistName={artist.name}
+              artistImage={artist.images && artist.images[1] ? artist.images[1].url : ''}
+              followers={artist.followers.total}
+              genres={artist.genres}
+              />
+          </div>
+        ))}
         </div>
-      ))}
+        <div className={styles['column']}></div>
       </div>
-      <div className={styles['column']}></div>
-    </div>
+      ) : (
+        <div className={styles['page']}>
+        <div className={styles['column']}></div>
+        <div className={styles['list']}>
+        {tracks.map((track) => (
+          <div>
+            <Track 
+              id={track.id}
+              trackName={track.name}
+              album={track.album}
+              // trackImage={track.images && track.images[1] ? track.images[1].url : ''}
+              uri={track.uri}
+              duration_ms={track.duration_ms}
+              artist={track.artist}
+            />
+          </div>
+        ))}
+        </div>
+        <div className={styles['column']}></div>
+      </div>
+      )
+      }
     </div>
   );
 };
@@ -90,12 +128,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   // Call both functions
   const profileInfo = await getProfile(context);
   const artists = await getArtists(context);
+  const tracks = await getTracks(context);
 
   // Merge the props
   return {
     props: {
       ...profileInfo.props,
       ...artists.props,
+      ...tracks.props
     },
   };
 };

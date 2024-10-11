@@ -8,7 +8,7 @@ interface ArtistProps {
   id: string;
 }
 
-const formatGenres = (genre: string) => {
+const formatGenres = (genre: string) : string => {
   if (genre.length === 0) {
     return genre
   }
@@ -23,7 +23,6 @@ const formatGenres = (genre: string) => {
 }
 
 const Artist: React.FC<ArtistProps> = ({ artistName, artistImage, followers, genres, id }) => {
-  
   return  (
     <div className={styles['artist-card']} key={id}>
       <div className={styles['artist-image']}>{artistImage ? <img className='rounded-xl' src={artistImage} height='100' width='100'/> : ''}</div>
