@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 import { GetServerSideProps } from 'next';
 import { getProfile } from '../hooks/getProfile'
 import { getArtists } from '../hooks/getArtists';
@@ -11,7 +13,7 @@ import Track from '../components/Track/Track';
 import styles from '../styles/You.module.css'
 import { Montserrat } from 'next/font/google'
 
-import React, { useState } from 'react'
+// import background from '../assets/background.svg'; // Adjust the path accordingly
 
 const inter = Montserrat({
   subsets: ['latin'],
@@ -26,7 +28,7 @@ interface Track {
   external_urls: Link;
   album: string[];
   duration_ms: number;
-  artist: string[];
+  preview_url: string;
 }
 
 interface ProfileProps {
@@ -77,13 +79,12 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists, track
   };
 
   return (
-    <div>
+    <div className={styles['grid']}>
       <Profile displayName={profileName} profileImage={profileImage} />
       <Switch isChecked={isBoxChecked} onToggle={handleCheckboxToggle}/>
       {isBoxChecked ? (
-        <div className={styles['page']}>
-        <div className={styles['column']}></div>
-        <div className={styles['list']}>
+        <div className={styles['grid']}>
+        <div >
         {artists.map((artist) => (
           <div>
             <Artist
@@ -96,27 +97,26 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists, track
           </div>
         ))}
         </div>
-        <div className={styles['column']}></div>
+        <div></div>
       </div>
       ) : (
-        <div className={styles['page']}>
-        <div className={styles['column']}></div>
-        <div className={styles['list']}>
+        <div>
+        <div></div>
+        <div>
         {tracks.map((track) => (
           <div>
             <Track 
               id={track.id}
               trackName={track.name}
               album={track.album}
-              // trackImage={track.images && track.images[1] ? track.images[1].url : ''}
               uri={track.uri}
               duration_ms={track.duration_ms}
-              artist={track.artist}
+              preview={track.preview_url}
             />
           </div>
         ))}
         </div>
-        <div className={styles['column']}></div>
+        <div></div>
       </div>
       )
       }

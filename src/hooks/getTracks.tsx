@@ -20,7 +20,7 @@ export const getTracks: GetServerSideProps = async (context) => {
 
     const tracks = await response.json();
 
-    // console.log(tracks)
+    // console.log(tracks['items'][0]['preview_url'])
     return {
       props: {
         tracks: tracks.items,

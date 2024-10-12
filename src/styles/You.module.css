@@ -1,6 +1,10 @@
 /* You.module.css */
+.gradient {
+  @apply bg-gradient-bg;
+}
+
 .page {
-  @apply flex min-h-screen bg-black;
+  @apply flex min-h-screen;
 }
 
 .list {
@@ -9,4 +13,8 @@
 
 .column {
   @apply flex-1 w-1/5;
+}
+
+.grid {
+  @apply m-auto w-5/6;
 }

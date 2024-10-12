@@ -1,6 +1,6 @@
 /* profile.module.css */
 .profile-top {
-  @apply text-center p-6 bg-white shadow-md rounded-lg;
+  @apply text-center p-6 rounded-lg;
 }
 
 .profile-image {
