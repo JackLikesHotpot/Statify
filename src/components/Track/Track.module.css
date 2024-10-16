@@ -1,14 +1,18 @@
 /* Track.module.css */
 .track-card {
-  @apply flex text-black relative;
+  @apply flex text-black relative w-4/5 mx-auto flex-row items-center justify-center;
+}
+
+.index {
+  @apply w-1/6 justify-center flex items-center font-bold
 }
 
 .track-image {
-  @apply float-left p-2 w-1/6;
+  @apply float-left p-1 w-1/6;
 }
 
 .track-details {
-  @apply flex text-left flex-col justify-center w-1/3;
+  @apply flex text-left flex-col justify-center w-1/5;
 }
 
 .track-name {
@@ -19,14 +23,14 @@
   @apply mb-2;
 }
 
-.track-genre {
-  @apply font-semibold;
-}
-
 .track-play {
-  @apply flex w-1/6 bg-blue-200 text-center justify-center items-center; 
+  @apply flex w-1/5 text-center justify-center items-center; 
 }
 
 .preview-audio {
-  @apply flex items-center;
+  @apply flex w-1/5 items-center;
+}
+
+.track-genre {
+  @apply font-semibold;
 }

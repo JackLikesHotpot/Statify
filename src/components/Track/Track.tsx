@@ -1,4 +1,5 @@
 import styles from './Track.module.css'
+import playbutton from '../../../public/assets/spotify_black.png'
 
 interface TrackProps {
   id: string;
@@ -7,6 +8,8 @@ interface TrackProps {
   duration_ms: number;
   album: string[]
   preview: string;
+  number: number;
+  index: number;
 }
 
 const getAlbumImage = (album: string[]) : string => {
@@ -21,16 +24,17 @@ const getTrackArtists = (album: { artists: { name: string }[] }): string => {
 };
 
 
-const Track: React.FC<TrackProps> = ({  id, trackName, uri, duration_ms, album, preview }) => {
+const Track: React.FC<TrackProps> = ({ index, id, trackName, uri, duration_ms, album, preview }) => {
   return  (
     <div className={styles['track-card']} key={id}>
+    <div className={styles['index']}>{index+1}</div>
       <div className={styles['track-image']}>{getAlbumImage(album) ? <img className='rounded-xl' src={getAlbumImage(album)} height='100' width='100'/> : ''}</div>
       <div className={styles['track-details']}>
         <div className={styles['track-name']}>{trackName}</div>
         <div className={styles['track-artist']}>{getTrackArtists(album)}</div>
       </div>
       <div className={styles['preview-audio']}><audio controls><source src={preview} type='audio/mp3'></source></audio></div>
-      <div className={styles['track-play']}><a href={uri} target='_blank'>Play on Spotify</a></div>
+      <div className={styles['track-play']}><a href={uri} target='_blank'><img src={playbutton.src} alt='Play on Spotify' width='30' height='30'/></a></div>
       </div>
   );
 };

@@ -1,21 +1,32 @@
-/* Artist.module.css */
+/* Track.module.css */
 .artist-card {
-  @apply border-2 border-black bg-green-600 text-white items-center justify-center flex rounded-xl h-32;
+  @apply flex text-black relative w-4/5 mx-auto flex-row items-center justify-center;
+}
+
+.index {
+  @apply w-1/6 justify-center flex items-center font-bold
 }
 
 .artist-image {
-  @apply object-cover flex-1 p-2;
+  @apply float-left p-1 w-1/6;
 }
 
 .artist-details {
-  @apply flex-1;
+  @apply flex text-left flex-col justify-center w-1/5;
 }
 
 .artist-name {
-  @apply font-bold xl:text-4xl;
+  @apply font-bold pt-2;
+}
+
+.artist-artist {
+  @apply mb-2;
+}
+
+.artist-play {
+  @apply flex w-1/5 text-center justify-center items-center; 
 }
 
 .artist-genre {
   @apply font-semibold;
 }
-

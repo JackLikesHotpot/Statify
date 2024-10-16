@@ -36,7 +36,7 @@ export default async function handler(req, res) {
       ]
     );
 
-    res.redirect('/you');
+    res.redirect('/tracks');
   } catch (error) {
     res.status(500).json({ error: 'Failed to authenticate' });
   }

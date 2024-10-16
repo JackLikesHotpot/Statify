@@ -1,8 +1,4 @@
 /* You.module.css */
-.gradient {
-  @apply bg-gradient-bg;
-}
-
 .page {
   @apply flex min-h-screen;
 }

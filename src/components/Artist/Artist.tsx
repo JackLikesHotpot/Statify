@@ -6,6 +6,7 @@ interface ArtistProps {
   followers: number;
   genres: string[];
   id: string;
+  index: number;
 }
 
 const formatGenres = (genre: string) : string => {
@@ -22,9 +23,10 @@ const formatGenres = (genre: string) : string => {
   return `${firstLetter}${genre.slice(1)}`
 }
 
-const Artist: React.FC<ArtistProps> = ({ artistName, artistImage, followers, genres, id }) => {
+const Artist: React.FC<ArtistProps> = ({ index, artistName, artistImage, followers, genres, id }) => {
   return  (
     <div className={styles['artist-card']} key={id}>
+    <div className={styles['index']}>{index+1}</div>
       <div className={styles['artist-image']}>{artistImage ? <img className='rounded-xl' src={artistImage} height='100' width='100'/> : ''}</div>
       <div className={styles['artist-details']}>
       <div className={styles['artist-name']}><a href={`spotify:artist:${id}`} target='_blank'>{artistName}</a></div>
