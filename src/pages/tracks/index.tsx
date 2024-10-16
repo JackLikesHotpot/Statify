@@ -4,7 +4,6 @@ import { GetServerSideProps } from 'next';
 import { getProfile } from '../../hooks/getProfile'
 import { getTracks } from '../../hooks/getTracks';
 
-import Profile from '../../components/Profile/Profile';
 import Track from '../../components/Track/Track';
 
 import styles from '../../styles/You.module.css'
@@ -19,7 +18,6 @@ interface Track {
   name: string;
   id: string;
   uri: string;
-  popularity: number;
   external_urls: Link;
   album: string[];
   duration_ms: number;
@@ -42,11 +40,10 @@ interface Link {
 
 interface PageProps extends ProfileProps, TrackProps {}
 
-const YouPage: React.FC<PageProps> = ({profileName, profileImage, tracks}) => {
+const TrackPage: React.FC<PageProps> = ({tracks}) => {
 
   return (
     <div className={styles['grid']}>
-      <Profile displayName={profileName} profileImage={profileImage} />
         <div className={styles['grid']}>
         <div>
         {tracks.map((track, index) => (
@@ -67,8 +64,6 @@ const YouPage: React.FC<PageProps> = ({profileName, profileImage, tracks}) => {
     </div>
     );
 };
-      
-    
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { spotify_access_token } = context.req.cookies; 
@@ -93,4 +88,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
   
-export default YouPage;
+export default TrackPage;

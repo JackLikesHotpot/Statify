@@ -1,6 +1,6 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSidePropsContext } from 'next';
 
-export const getArtists: GetServerSideProps = async (context) => {
+export const getArtists = async (context: GetServerSidePropsContext) => {
   const { spotify_access_token } = context.req.cookies;
 
     if (!spotify_access_token) {

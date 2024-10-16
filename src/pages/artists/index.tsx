@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import { GetServerSideProps } from 'next';
 import { getProfile } from '../../hooks/getProfile'
@@ -33,7 +33,6 @@ interface Artist {
   id: string;
   popularity: number;
   external_urls: Link;
-  followers: Followers;
 }
 
 interface ArtistProps {
@@ -44,27 +43,22 @@ interface Link {
   spotify: string;
 }
 
-interface Followers {
-  total: number;
-}
-
 interface PageProps extends ProfileProps, ArtistProps {}
 
-const YouPage: React.FC<PageProps> = ({profileName, profileImage, artists }) => {
+const ArtistPage: React.FC<PageProps> = ({artists }) => {
 
   return (
     <div className={styles['grid']}>
-      <Profile displayName={profileName} profileImage={profileImage} />
         <div className={styles['grid']}>
         {artists.map((artist, index) => (
           <div>
             <Artist
               index={index}
               id={artist.id}
-              artistName={artist.name}
-              artistImage={artist.images && artist.images[1] ? artist.images[1].url : ''}
-              followers={artist.followers.total}
+              name={artist.name}
+              image={artist.images && artist.images[1] ? artist.images[1].url : ''}
               genres={artist.genres}
+              uri={artist.external_urls.spotify}
               />
           </div>
         ))}
@@ -97,4 +91,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
   
-export default YouPage;
+export default ArtistPage;

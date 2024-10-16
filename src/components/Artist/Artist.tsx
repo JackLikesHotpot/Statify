@@ -1,12 +1,13 @@
 import styles from './Artist.module.css'
+import playbutton from '../../../public/assets/spotify_black.png'
 
 interface ArtistProps {
-  artistName: string,
-  artistImage: string;
-  followers: number;
+  name: string,
+  image: string;
   genres: string[];
   id: string;
   index: number;
+  uri: string;
 }
 
 const formatGenres = (genre: string) : string => {
@@ -23,17 +24,17 @@ const formatGenres = (genre: string) : string => {
   return `${firstLetter}${genre.slice(1)}`
 }
 
-const Artist: React.FC<ArtistProps> = ({ index, artistName, artistImage, followers, genres, id }) => {
+const Artist: React.FC<ArtistProps> = ({ index, name, image, genres, id, uri }) => {
   return  (
     <div className={styles['artist-card']} key={id}>
     <div className={styles['index']}>{index+1}</div>
-      <div className={styles['artist-image']}>{artistImage ? <img className='rounded-xl' src={artistImage} height='100' width='100'/> : ''}</div>
+      <div className={styles['artist-image']}>{image ? <img className='rounded-xl' src={image} height='100' width='100'/> : ''}</div>
       <div className={styles['artist-details']}>
-      <div className={styles['artist-name']}><a href={`spotify:artist:${id}`} target='_blank'>{artistName}</a></div>
+      <div className={styles['artist-name']}><a href={`spotify:artist:${id}`} target='_blank'>{name}</a></div>
         <div className={styles['artist-genre']}>{genres.length > 0 && genres.map(formatGenres).join(', ')}</div>
-        <div className='artistFollowers'><p>{followers} followers</p></div>
         </div>
-        </div>
+        <div className={styles['artist-play']}><a href={uri} target='_blank'><img src={playbutton.src} alt='Play on Spotify' width='30' height='30'/></a></div>
+    </div>
   );
 };
 

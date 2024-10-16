@@ -8,7 +8,6 @@ interface TrackProps {
   duration_ms: number;
   album: string[]
   preview: string;
-  number: number;
   index: number;
 }
 
