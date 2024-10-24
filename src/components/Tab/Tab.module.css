@@ -8,7 +8,7 @@
 }
 
 .tab-terms {
-  @apply flex mx-auto w-3/5 text-center text-xl pb-4;
+  @apply flex mx-auto w-3/5 text-center text-xl pb-4 border-t-2 border-x-2;
 }
 
 .short-term {

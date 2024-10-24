@@ -1,25 +1,25 @@
 /* Track.module.css */
 .track-card {
-  @apply flex text-black relative w-4/5 mx-auto flex-row items-center justify-center;
+  @apply flex text-black relative w-3/5 mx-auto flex-row items-center justify-center;
 }
 .index {
   @apply w-1/6 justify-center flex items-center font-bold
 }
 
 .track-image {
-  @apply float-left p-1 w-1/6;
+  @apply p-1 w-1/6;
 }
 
 .track-details {
-  @apply flex text-left flex-col justify-center w-1/5;
+  @apply flex text-left flex-row justify-center w-1/3 items-center;
 }
 
 .track-name {
-  @apply font-bold pt-2;
+  @apply font-bold w-1/2 items-center;
 }
 
 .track-artist {
-  @apply mb-2;
+  @apply w-1/2;
 }
 
 .track-play {

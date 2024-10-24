@@ -97,7 +97,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   const { period } = context.query
 
   const time_period = Array.isArray(period) ? period[0] : period || 'Last 4 weeks'
-  const period_def = getTimePeriod(time_period)
+  const period_mean = getTimePeriod(time_period)
   if (!spotify_access_token) {
     return {
       redirect: {
@@ -108,7 +108,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   }
 
   const profileInfo = await getProfile(context);
-  const tracks = await getTracks(context, period_def);
+  const tracks = await getTracks(context, period_mean);
 
   return {
     props: {

@@ -29,7 +29,7 @@ const Track: React.FC<TrackProps> = ({ index, id, trackName, uri, duration_ms, a
     <div>
     <div className={styles['track-card']} key={id}>
     <div className={styles['index']}>{index+1}</div>
-      <div className={styles['track-image']}>{getAlbumImage(album) ? <img className='rounded-xl' src={getAlbumImage(album)} height='100' width='100'/> : ''}</div>
+      <div className={styles['track-image']}>{getAlbumImage(album) ? <img className='rounded-xl' src={getAlbumImage(album)} height='50' width='50'/> : ''}</div>
       <div className={styles['track-details']}>
         <div className={styles['track-name']}>{trackName}</div>
         <div className={styles['track-artist']}>{getTrackArtists(album)}</div>
