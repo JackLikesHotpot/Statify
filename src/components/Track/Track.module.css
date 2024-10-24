@@ -2,7 +2,6 @@
 .track-card {
   @apply flex text-black relative w-4/5 mx-auto flex-row items-center justify-center;
 }
-
 .index {
   @apply w-1/6 justify-center flex items-center font-bold
 }

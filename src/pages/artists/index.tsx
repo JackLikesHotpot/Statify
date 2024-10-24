@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import { getProfile } from '../../hooks/getProfile'
 import { getArtists } from '../../hooks/getArtists';
 
-import Profile from '../../components/Profile/Profile';
+import Header from '../../components/Header/Header';
 import Artist from '../../components/Artist/Artist';
 
 import styles from '../../styles/You.module.css'
@@ -49,6 +49,8 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
 
   return (
     <div className={styles['grid']}>
+        
+      <Header/>
         <div className={styles['grid']}>
         {artists.map((artist, index) => (
           <div>

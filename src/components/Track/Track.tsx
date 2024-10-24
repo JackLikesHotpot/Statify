@@ -25,6 +25,8 @@ const getTrackArtists = (album: { artists: { name: string }[] }): string => {
 
 const Track: React.FC<TrackProps> = ({ index, id, trackName, uri, duration_ms, album, preview }) => {
   return  (
+    // <div className={styles['track-page']}>
+    <div>
     <div className={styles['track-card']} key={id}>
     <div className={styles['index']}>{index+1}</div>
       <div className={styles['track-image']}>{getAlbumImage(album) ? <img className='rounded-xl' src={getAlbumImage(album)} height='100' width='100'/> : ''}</div>
@@ -35,6 +37,7 @@ const Track: React.FC<TrackProps> = ({ index, id, trackName, uri, duration_ms, a
       <div className={styles['preview-audio']}><audio controls><source src={preview} type='audio/mp3'></source></audio></div>
       <div className={styles['track-play']}><a href={uri} target='_blank'><img src={playbutton.src} alt='Play on Spotify' width='30' height='30'/></a></div>
       </div>
+    </div>
   );
 };
 

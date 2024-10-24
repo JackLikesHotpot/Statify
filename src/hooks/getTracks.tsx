@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 
 
-export const getTracks = async (context: GetServerSidePropsContext) => {
+export const getTracks = async (context: GetServerSidePropsContext, time_range: string) => {
   const { spotify_access_token } = context.req.cookies;
 
     if (!spotify_access_token) {
@@ -13,7 +13,7 @@ export const getTracks = async (context: GetServerSidePropsContext) => {
       };
     }
 
-    const response = await fetch (`https://api.spotify.com/v1/me/top/tracks?limit=50`, {
+    const response = await fetch (`https://api.spotify.com/v1/me/top/tracks?time_range=${time_range}&limit=50`, {
       headers: {
         Authorization: `Bearer ${spotify_access_token}`,
       }

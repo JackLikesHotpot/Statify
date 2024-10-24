@@ -1,0 +1,28 @@
+/* Header.module.css */
+.header {
+  @apply bg-white h-12 border-b border-gray-300 start-0 z-10 w-full fixed mx-auto flex-row;
+}
+
+.nav {
+  @apply w-3/5 mx-auto 
+}
+
+.logo {
+  @apply float-left w-1/6 text-2xl pl-3 
+}
+
+.navbar {
+  @apply flex text-center flex-wrap bg-red-500 h-12 items-center
+}
+
+.nav-artists {
+  @apply w-24         
+}
+
+.nav-tracks {
+  @apply w-24
+}
+
+.nav-genres {
+  @apply w-24
+}
