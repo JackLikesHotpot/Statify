@@ -12,3 +12,8 @@ Features:
 - [ ] Create appropriate styles for mobile design
 - [ ] Style login page
 - [ ] Style login button
+- [ ] Fix styling by increasing white space so everything isn't together
+
+![A preview image of the project can be seen here](https://i.imgur.com/f48KebV.png).
+
+*Last updated 02/11/2024.*
