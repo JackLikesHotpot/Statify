@@ -9,9 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
+      fontFamily: {},
+      backgroundImage: {
+        'gradient-bg': "url('/assets/background.svg')", // Extend here
       }
     },
   },
   plugins: [],
 };
+

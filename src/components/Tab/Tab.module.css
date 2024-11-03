@@ -1,10 +1,10 @@
 /* Tab.module.css */
 .tab {
-  @apply pt-16
+  @apply pt-24
 }
 
 .tab-title {
-  @apply text-center text-5xl pb-4;
+  @apply text-center text-5xl pb-12;
 }
 
 .tab-terms {

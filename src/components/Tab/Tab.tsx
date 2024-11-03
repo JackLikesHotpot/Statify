@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const Tab = ({onPeriodChange}: any) => {
 
-    const [title, setTitle] = useState('Last 12 months')
+    const [title, setTitle] = useState('Last 4 weeks')
   
     const handleTabChange = (newTitle: string) => {
       setTitle(newTitle)

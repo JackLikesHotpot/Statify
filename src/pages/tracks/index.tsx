@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router';
 
 import { GetServerSidePropsContext } from 'next';
@@ -46,7 +46,7 @@ const TrackPage: React.FC<PageProps> = ({tracks}) => {
   const router = useRouter();
   const { query } = router;
 
-  const [period, setPeriod] = useState('Last 12 months')
+  const [period, setPeriod] = useState('Last 4 weeks')
 
   const handlePeriodChange = (newPeriod: string) => {
     router.push({

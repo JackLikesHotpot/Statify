@@ -28,7 +28,7 @@ const Artist: React.FC<ArtistProps> = ({ index, name, image, genres, id, uri }) 
   return  (
     <div className={styles['artist-card']} key={id}>
     <div className={styles['index']}>{index+1}</div>
-      <div className={styles['artist-image']}>{image ? <img className='rounded-xl' src={image} height='100' width='100'/> : ''}</div>
+      <div className={styles['artist-image']}>{image ? <img className='rounded-xl' src={image} height='50' width='50'/> : ''}</div>
       <div className={styles['artist-details']}>
       <div className={styles['artist-name']}><a href={`spotify:artist:${id}`} target='_blank'>{name}</a></div>
         <div className={styles['artist-genre']}>{genres.length > 0 && genres.map(formatGenres).join(', ')}</div>

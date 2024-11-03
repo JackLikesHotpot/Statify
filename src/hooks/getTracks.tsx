@@ -1,6 +1,5 @@
 import { GetServerSidePropsContext } from 'next';
 
-
 export const getTracks = async (context: GetServerSidePropsContext, time_range: string) => {
   const { spotify_access_token } = context.req.cookies;
 
