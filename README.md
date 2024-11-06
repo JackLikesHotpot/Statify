@@ -13,6 +13,9 @@ Features:
 - [ ] Style login page
 - [ ] Style login button
 - [x] Fix styling by increasing white space so everything isn't together
+- [ ] Replace audio players with Vime.js so track page design matches artist page design better
+- [ ] Add media queries
+- [ ] Navbar buttons should check if currently logged in and redirect accordingly
 
 ![A preview image of the project can be seen here](https://i.imgur.com/f48KebV.png).
 

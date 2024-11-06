@@ -1,0 +1,29 @@
+/* Login.module/css */
+
+.button {
+  @apply bg-green-600 text-white font-semibold h-12 w-40 rounded-lg flex items-center justify-center mt-10 mx-auto;
+}
+
+.heading {
+  @apply text-black items-center justify-center flex text-6xl
+}
+
+.container {
+  @apply bg-gray-300 rounded-xl w-5/6 mx-auto h-52 flex justify-center flex-col
+}
+
+.descriptions {
+  @apply mx-auto justify-center flex flex-col border-x border-black w-3/5 items-center
+}
+
+.track-description, .artist-description, .sound-description, .link-description {
+  @apply flex pt-6 items-center text-left w-2/3
+}
+
+.icon {
+  @apply w-2/5
+}
+
+.label {
+  @apply w-3/5 text-xl
+}

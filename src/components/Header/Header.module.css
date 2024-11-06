@@ -1,6 +1,6 @@
 /* Header.module.css */
 .header {
-  @apply bg-white h-12 border-b border-gray-300 start-0 z-10 w-full fixed mx-auto flex-row;
+  @apply bg-white h-12 border-b border-gray-300 z-10 w-full fixed;
 }
 
 .nav {
@@ -8,25 +8,21 @@
 }
 
 .logo {
-  @apply float-left w-1/6 text-2xl pl-3 flex
+  @apply float-left w-1/6 text-2xl flex
 }
 
 .logo-name {
-  @apply flex float-left pt-1 pl-3
+  @apply flex float-left pl-3 items-center
 }
 
 .navbar {
-  @apply flex text-center flex-wrap bg-red-500 h-12 items-center
+  @apply flex text-center flex-wrap h-12 items-center
 }
 
 .nav-artists {
-  @apply w-24         
+  @apply w-28;
 }
 
 .nav-tracks {
-  @apply w-24
-}
-
-.nav-genres {
-  @apply w-24
+  @apply w-28;
 }

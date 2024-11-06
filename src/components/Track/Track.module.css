@@ -1,7 +1,8 @@
 /* Track.module.css */
 .track-card {
-  @apply flex text-black relative w-3/5 mx-auto flex-row items-center justify-center;
+  @apply flex text-black relative w-3/5 mx-auto justify-center min-h-12;
 }
+
 .index {
   @apply w-1/6 justify-center flex items-center font-bold
 }
@@ -11,23 +12,19 @@
 }
 
 .track-details {
-  @apply flex text-left flex-row justify-center w-1/3 items-center;
+  @apply flex w-1/5 justify-center text-sm flex-col;
 }
 
 .track-name {
-  @apply font-bold w-1/2 items-center;
+  @apply font-bold;
 }
 
 .track-artist {
-  @apply w-1/2;
+  @apply text-xs;
 }
 
 .track-play {
   @apply flex w-1/5 text-center justify-center items-center; 
-}
-
-.preview-audio {
-  @apply flex w-1/5 items-center;
 }
 
 .track-genre {

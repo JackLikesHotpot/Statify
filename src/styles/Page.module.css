@@ -1,9 +1,8 @@
-/* You.module.css */
+/* Page.module.css */
 .header {
   @apply sticky top-0;
 }
 
-/* Tab.module.css */
 .tab {
   @apply pt-16
 }

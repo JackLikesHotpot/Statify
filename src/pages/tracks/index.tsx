@@ -9,7 +9,7 @@ import Track from '../../components/Track/Track';
 import Header from '../../components/Header/Header';
 import Tab from '../../components/Tab/Tab';
 
-import styles from '../../styles/You.module.css'
+import styles from '../../styles/Page.module.css'
 import { Montserrat } from 'next/font/google'
 
 const inter = Montserrat({
