@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation'
 
 import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
+
 import styles from '../styles/Login.module.css'
 import music from '../../public/assets/music.svg'
 import artist from '../../public/assets/artist.svg'
@@ -17,40 +19,56 @@ export default function Home() {
       <Header/>
       <div className='pt-24'/>
       <div className={styles['container']}>
-      <p className={styles['heading']}>Statify</p>
+      <title className={styles['heading']}>Statify</title>
         <button className={styles['button']} onClick={() => router.push('/api/login')}>Login with Spotify</button>
       </div>
       
       <div className='pt-24'/>
       <div className={styles['descriptions']}>
+
         <div className={styles['track-description']}>
-          <div className={styles['icon']}>
-            <img src={music.src} width='100'/>
-          </div>
-          <p className={styles['label']}>View your most played tracks over 3 different periods!</p>
+            <div className={styles['icon']}>
+              <img src={music.src} width='90'/>
+            </div>
+            <div className={styles['description']}>
+              <h1 className={styles['title']}>View your recent tracks</h1>
+              <p className={styles['label']}>Shows your most played tracks over 3 different periods!</p>
+            </div>
           </div>
 
           <div className={styles['artist-description']}>
           <div className={styles['icon']}>
             <img src={artist.src} width='100'/>
           </div>
-          <p className={styles['label']}>Find out what artist you've been listening to recently!</p>
+            <div className={styles['description']}>
+              <h1 className={styles['title']}>View your recent artists</h1>
+              <p className={styles['label']}>Find out what artist you've been listening to recently!</p>
+            </div>
           </div>
 
           <div className={styles['sound-description']}>
           <div className={styles['icon']}>
-            <img src={sound.src} width='100'/>
+            <img src={sound.src} width='70'/>
           </div>
-          <p className={styles['label']}>Have a small preview of the songs you like!</p>
+            <div className={styles['description']}>
+              <h1 className={styles['title']}>Preview your songs</h1>
+              <p className={styles['label']}>Listen to a preview of the songs you like!</p>
+            </div>
           </div>
 
           <div className={styles['link-description']}>
           <div className={styles['icon']}>
-            <img src={link.src} width='100'/>
+            <img src={link.src} width='75'/>
           </div>
-          <p className={styles['label']}>You can access the Spotify pages directly from here!</p>
+            <div className={styles['description']}>
+              <h1 className={styles['title']}>Find your songs on Spotify</h1>
+              <p className={styles['label']}>You can access the Spotify pages directly from here!</p>
+            </div>
           </div>
+          
         </div>
+        
+        <Footer/>
       </div>
   );
 };

@@ -11,6 +11,7 @@ import Tab from '../../components/Tab/Tab';
 
 import styles from '../../styles/Page.module.css'
 import { Montserrat } from 'next/font/google'
+import Head from 'next/head';
 
 const inter = Montserrat({
   subsets: ['latin'],
@@ -57,6 +58,11 @@ const TrackPage: React.FC<PageProps> = ({tracks}) => {
     setPeriod(newPeriod)
   }
   return (
+    <>
+    <Head>
+      <title>Statify - Top Tracks</title>
+      <meta name="description" content="Explore your recently played tracks with Statify!" />
+    </Head>
     <div className={styles['grid']}>
     <Header/>
     <Tab onPeriodChange={handlePeriodChange}/>
@@ -74,8 +80,9 @@ const TrackPage: React.FC<PageProps> = ({tracks}) => {
           />
         </div>
       ))}
+      </div>
     </div>
-    </div>
+    </>
     );
 };
 
@@ -98,6 +105,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
 
   const time_period = Array.isArray(period) ? period[0] : period || 'Last 4 weeks'
   const period_mean = getTimePeriod(time_period)
+  
   if (!spotify_access_token) {
     return {
       redirect: {

@@ -1,0 +1,12 @@
+/* Footer.module.css */
+.footer {
+  @apply border-y border-black mt-64 w-full flex-row flex
+}
+
+.left-section {
+  @apply w-1/2 text-left flex flex-col
+}
+
+.right-section {
+  @apply w-1/2 text-right flex flex-col border-x border-black
+}

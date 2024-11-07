@@ -11,6 +11,7 @@ import Tab from '../../components/Tab/Tab';
 
 import styles from '../../styles/Page.module.css'
 import { Montserrat } from 'next/font/google'
+import Head from 'next/head';
 
 const inter = Montserrat({
   subsets: ['latin'],
@@ -61,7 +62,13 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
     
     setPeriod(newPeriod)
   }
+
   return (
+    <>
+    <Head>
+      <title>Statify - Top Artists</title>
+      <meta name="description" content="Explore your favourite artists with Statify!" />
+    </Head>
     <div className={styles['grid']}>
       <Header/>
       <Tab onPeriodChange={handlePeriodChange}/>
@@ -81,6 +88,7 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
         <div></div>
       </div>
     </div>
+    </>
   );
 };
 

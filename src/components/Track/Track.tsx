@@ -11,27 +11,38 @@ interface TrackProps {
   index: number;
 }
 
-const getAlbumImage = (album: string[]) : string => {
-  if (album['images'][0].url) {
-    return (album['images'][0].url)
+interface artist {
+  name: string;
+}
+
+interface Album {
+  artists: artist[];
+}
+
+const getAlbumImage = (albumImages: string[]) : string => {
+  if (albumImages['images'][0].url) {
+    return (albumImages['images'][0].url)
   }
   return ''
 }
 
-const getTrackArtists = (album: { artists: { name: string }[] }): string => {
+const getTrackArtists = (album: Album): string => {
   return album.artists.map(artist => artist.name).join(', ');
 };
 
 
 const Track: React.FC<TrackProps> = ({ index, id, trackName, uri, album, preview }) => {
+  const albumImage = getAlbumImage(album)
+  const trackArtists = getTrackArtists(album)
+
   return  (
     <div className={styles['track-page']}>
     <div className={styles['track-card']} key={id}>
     <div className={styles['index']}>{index+1}</div>
-      <div className={styles['track-image']}>{getAlbumImage(album) ? <img className='track-image' src={getAlbumImage(album)} height='50' width='50'/> : ''}</div>
+      <div className={styles['track-image']}>{albumImage ? <img className='track-image' alt={ trackName && albumImage ? `Album cover for ${trackName} by ${albumImage}` : 'Spotify album cover for track.'} src={getAlbumImage(album)} height='50' width='50'/> : ''}</div>
       <div className={styles['track-details']}>
         <div className={styles['track-name']}>{trackName}</div>
-        <div className={styles['track-artist']}>{getTrackArtists(album)}</div>
+        <div className={styles['track-artist']}>{trackArtists}</div>
       </div>
       <div className={styles['preview-audio']}><audio controls><source src={preview} type='audio/mp3'></source></audio></div>
       <div className={styles['track-play']}><a href={uri} target='_blank'><img src={playbutton.src} alt='Play on Spotify' width='30' height='30'/></a></div>
