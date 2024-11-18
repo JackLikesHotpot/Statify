@@ -4,36 +4,56 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 interface TrackProps {
-  id: string;
   trackName: string,
   uri: string;
   duration_ms: number;
-  album: string[]
+  album: Album;
   preview: string;
   index: number;
 }
 
-interface artist {
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
+
+interface Artist {
+  external_urls: { [key: string]: string };  // an object with string keys and values
+  href: string;
+  id: string;
   name: string;
+  type: string;
+  uri: string;
 }
 
 interface Album {
-  artists: artist[];
+  album_type: string;
+  artists: Artist[];
+  available_markets: string[];
+  external_urls: { spotify: string };
+  href: string;
+  id: string;
+  images: Image[];
+  is_playable: boolean;
+  name: string;
+  release_date: string;
+  release_date_precision: string;
+  total_tracks: number;
+  type: string;
+  uri: string;
 }
 
-const getAlbumImage = (albumImages: string[]) : string => {
-  if (albumImages['images'][0].url) {
-    return (albumImages['images'][0].url)
-  }
-  return ``
-}
+const getAlbumImage = (album: Album): string => {
+  return album.images[0]?.url || ''; 
+};
 
-const getTrackArtists = (album: Album): string => {
-  return album.artists.map(artist => artist.name).join(', ');
+const getTrackArtists = (album: Album): string[] => {
+  return album.artists.map(artist => artist.name);
 };
 
 
-const Track: React.FC<TrackProps> = ({ index, id, trackName, uri, album, preview }) => {
+const Track: React.FC<TrackProps> = ({ index, trackName, uri, album, preview }) => {
   const albumImage = getAlbumImage(album)
   const trackArtists = getTrackArtists(album)
 

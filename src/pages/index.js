@@ -1,6 +1,7 @@
 // pages/index.js
 
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
@@ -28,7 +29,7 @@ export default function Home() {
 
         <div className={styles['track-description']}>
             <div className={styles['icon']}>
-              <img src={music.src} width='90'/>
+              <Image src={music.src} width='90'/>
             </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>View your recent tracks</h1>
@@ -38,17 +39,17 @@ export default function Home() {
 
           <div className={styles['artist-description']}>
           <div className={styles['icon']}>
-            <img src={artist.src} width='100'/>
+            <Image src={artist.src} width='100'/>
           </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>View your recent artists</h1>
-              <p className={styles['label']}>Find out what artist you've been listening to recently!</p>
+              <p className={styles['label']}>Find out what artist you&#39;ve been listening to recently!</p>
             </div>
           </div>
 
           <div className={styles['sound-description']}>
           <div className={styles['icon']}>
-            <img src={sound.src} width='70'/>
+            <Image src={sound.src} width='70'/>
           </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>Preview your songs</h1>
@@ -58,7 +59,7 @@ export default function Home() {
 
           <div className={styles['link-description']}>
           <div className={styles['icon']}>
-            <img src={link.src} width='75'/>
+            <Image src={link.src} width='75'/>
           </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>Find your songs on Spotify</h1>

@@ -4,10 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 interface ArtistProps {
+  id: string;
   name: string,
   image: string;
   genres: string[];
-  id: string;
   index: number;
   uri: string;
 }

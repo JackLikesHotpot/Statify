@@ -23,7 +23,7 @@ interface Track {
   id: string;
   uri: string;
   external_urls: Link;
-  album: string[];
+  album: Album;
   duration_ms: number;
   preview_url: string;
 }
@@ -40,7 +40,36 @@ interface TrackProps {
 interface Link {
   spotify: string;
 }
+interface Image {
+  url: string;
+  width: number;
+  height: number;
+}
 
+interface Artist {
+  external_urls: { spotify: string };
+  href: string;
+  id: string;
+  name: string;
+  type: string;
+  uri: string;
+}
+interface Album {
+  album_type: string;
+  artists: Artist[];
+  available_markets: string[];
+  external_urls: { spotify: string };
+  href: string;
+  id: string;
+  images: Image[];
+  is_playable: boolean;
+  name: string;
+  release_date: string;
+  release_date_precision: string;
+  total_tracks: number;
+  type: string;
+  uri: string;
+}
 interface PageProps extends ProfileProps, TrackProps {}
 
 const TrackPage: React.FC<PageProps> = ({tracks}) => {
@@ -68,9 +97,8 @@ const TrackPage: React.FC<PageProps> = ({tracks}) => {
     <Tab onPeriodChange={handlePeriodChange}/>
       <div className={styles['grid']}>
       {tracks.map((track, index) => (
-        <div>
+        <div key={track.id}>
           <Track 
-            id={track.id}
             trackName={track.name}
             album={track.album}
             uri={track.uri}

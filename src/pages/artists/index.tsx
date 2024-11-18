@@ -74,10 +74,10 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
       <Tab onPeriodChange={handlePeriodChange}/>
         <div className={styles['grid']}>
         {artists.map((artist, index) => (
-          <div>
+          <div key={artist.id}>
             <Artist
-              index={index}
               id={artist.id}
+              index={index}
               name={artist.name}
               image={artist.images && artist.images[1] ? artist.images[1].url : ``}
               genres={artist.genres}
