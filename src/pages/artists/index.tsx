@@ -79,7 +79,7 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
               index={index}
               id={artist.id}
               name={artist.name}
-              image={artist.images && artist.images[1] ? artist.images[1].url : ''}
+              image={artist.images && artist.images[1] ? artist.images[1].url : ``}
               genres={artist.genres}
               uri={artist.external_urls.spotify}
               />
