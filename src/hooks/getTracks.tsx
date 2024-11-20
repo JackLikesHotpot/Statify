@@ -12,12 +12,14 @@ export const getTracks = async (context: GetServerSidePropsContext, time_range: 
       };
     }
 
-    const response = await fetch (`https://api.spotify.com/v1/me/top/tracks?time_range=${time_range}&limit=1`, {
+    const response = await fetch (`https://api.spotify.com/v1/me/top/tracks?time_range=${time_range}&limit=50`, {
       headers: {
         Authorization: `Bearer ${spotify_access_token}`,
       }
     })
 
+    const resp = await response.text();
+    console.log(resp)
     const tracks = await response.json();
 
     return {
