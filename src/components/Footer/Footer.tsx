@@ -1,4 +1,5 @@
 import styles from './Footer.module.css'
+import Link from 'next/link'
 
 const Footer = () => {
   return  (
@@ -16,10 +17,10 @@ const Footer = () => {
 
         <div className={styles['right-section']}>
           <div className={styles['license']}>
-            License
+            <Link href='/license'>License</Link>
           </div>
-          <div className={styles['GitHub']}>
-            Logo
+          <div className={styles['repo']}>
+          <Link href='https://github.com/JackLikesHotpot/Statify'>GitHub</Link>
           </div>
         </div>
 
