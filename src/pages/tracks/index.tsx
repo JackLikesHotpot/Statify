@@ -70,6 +70,7 @@ interface Album {
   type: string;
   uri: string;
 }
+
 interface PageProps extends ProfileProps, TrackProps {}
 
 const TrackPage: React.FC<PageProps> = ({tracks}) => {

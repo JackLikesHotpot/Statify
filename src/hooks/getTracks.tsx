@@ -1,6 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 
 export const getTracks = async (context: GetServerSidePropsContext, time_range: string) => {
+  
   const { spotify_access_token } = context.req.cookies;
 
     if (!spotify_access_token) {
@@ -18,8 +19,6 @@ export const getTracks = async (context: GetServerSidePropsContext, time_range: 
       }
     })
 
-    const resp = await response.text();
-    console.log(resp)
     const tracks = await response.json();
 
     return {
