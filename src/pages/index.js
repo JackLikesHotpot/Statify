@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter()
 
   return (
-    <div>
+    <>
       <Header/>
       <div className='pt-24'/>
       <div className={styles['container']}>
@@ -66,10 +66,9 @@ export default function Home() {
               <p className={styles['label']}>You can access the Spotify pages directly from here!</p>
             </div>
           </div>
-          
         </div>
         
-        <Footer/>
-      </div>
+      <div className='pt-24'/>
+      </>
   );
 };
