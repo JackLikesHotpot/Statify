@@ -24,5 +24,5 @@
 }
 
 .artist-genre {
-  @apply font-sans text-xs;
+  @apply text-xs;
 }

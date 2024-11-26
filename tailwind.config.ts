@@ -8,12 +8,10 @@ module.exports = {
     "./src/hooks/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {},
-      backgroundImage: {
-        'gradient-bg': "url('/assets/background.svg')", // Extend here
-      }
-    },
+    fontFamily: {
+      'Montserrat': ['Montserrat', 'sans-serif'],
+      'Mulish': ['Mulish', 'sans-serif']
+    } 
   },
   plugins: [],
 };
