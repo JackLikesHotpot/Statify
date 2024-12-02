@@ -48,8 +48,8 @@ const getAlbumImage = (album: Album): string => {
   return album.images[0]?.url || ''; 
 };
 
-const getTrackArtists = (album: Album): string[] => {
-  return album.artists.map(artist => artist.name);
+const getTrackArtists = (album: Album): string => {
+  return album.artists.map(artist => artist.name).join(', ');
 };
 
 
@@ -66,7 +66,7 @@ const Track: React.FC<TrackProps> = ({ index, trackName, uri, album, preview }) 
         <div className={styles['track-name']}>{trackName}</div>
         <div className={styles['track-artist']}>{trackArtists}</div>
       </div>
-      <div className={styles['preview-audio']}><audio controls><source src={preview} type='audio/mp3'></source></audio></div>
+      {preview ? <div className={styles['preview-audio']}><audio controls><source src={preview} type='audio/mp3'></source></audio></div> : ``}
       <div className={styles['track-play']}><Link href={uri} target='_blank'><Image src={playbutton.src} alt='Play on Spotify' width='30' height='30'/></Link></div>
       </div>
     </div>

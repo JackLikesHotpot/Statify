@@ -26,3 +26,9 @@
 .nav-tracks {
   @apply w-28;
 }
+
+@screen sm {
+  .logo {
+    @apply text-xl w-1/2;
+  }
+}

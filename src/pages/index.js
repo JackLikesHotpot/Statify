@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
 import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
 
 import styles from '../styles/Login.module.css'
 import music from '../../public/assets/music.svg'
@@ -18,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <div className='pt-24'/>
+      <div className={styles['space']}/>
       <div className={styles['container']}>
       <title className={styles['heading']}>Statify</title>
         <button className={styles['button']} onClick={() => router.push('/api/login')}>Login with Spotify</button>
@@ -68,7 +67,7 @@ export default function Home() {
           </div>
         </div>
         
-      <div className='pt-24'/>
+      <div className={styles['space']}/>
       </>
   );
 };

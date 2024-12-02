@@ -26,3 +26,21 @@
 .artist-genre {
   @apply text-xs;
 }
+
+@screen sm {
+  .artist-card {
+    @apply w-full;
+  }
+
+  .tab {
+    @apply pt-24
+  }
+
+  .artist-image {
+    @apply p-1 w-1/5;
+  }
+
+  .artist-name {
+    @apply text-xs;
+  }
+}

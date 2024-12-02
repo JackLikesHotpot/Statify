@@ -24,9 +24,23 @@
 }
 
 .track-play {
-  @apply flex w-1/5 text-center justify-center items-center; 
+  @apply flex w-1/5 justify-center items-center; 
 }
 
-.track-genre {
-  @apply font-semibold;
+@screen sm {
+  .track-card {
+    @apply w-full;
+  }
+
+  .tab {
+    @apply pt-24
+  }
+
+  .track-image {
+    @apply p-1 w-1/5;
+  }
+
+  .track-name {
+    @apply text-xs;
+  }
 }

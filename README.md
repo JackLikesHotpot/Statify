@@ -37,6 +37,7 @@ pnpm run dev
 - [x] Refine footer details
 - [x] Implement alternate font
 - [ ] Optimize fonts
+- [ ] Create media queries for devices less than 640px wide
 
 
 

@@ -8,7 +8,7 @@
 }
 
 .tab-title {
-  @apply text-center text-5xl pb-4;
+  @apply text-center pb-4;
 }
 
 .tab-terms {

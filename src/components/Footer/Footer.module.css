@@ -12,5 +12,15 @@
 }
 
 .repo, .linkedin {
-  @apply text-black w-1/6 my-auto
+  @apply w-1/6 my-auto
 } 
+
+@screen sm {
+  .footer {
+    @apply text-sm
+  }
+
+  .repo, .linkedin {
+    @apply w-1/4 
+  }
+}
