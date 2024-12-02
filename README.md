@@ -41,9 +41,9 @@ pnpm run dev
 
 
 
-![A preview image of the project can be seen here](https://i.imgur.com/f48KebV.png).
+![A preview image of the project can be seen here](https://i.imgur.com/e9OMVNB.png).
 
-*Image last updated 02/11/2024.*
+*Image last updated 30/11/2024.*
 
 ## License
 
