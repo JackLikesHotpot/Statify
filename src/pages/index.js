@@ -28,7 +28,7 @@ export default function Home() {
 
         <div className={styles['track-description']}>
             <div className={styles['icon']}>
-              <Image src={music.src} width='90' height='100'/>
+              <Image src={music.src} width='90' height='100' alt='Icon for the description for tracks.'/>
             </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>View your recent tracks</h1>
@@ -38,7 +38,7 @@ export default function Home() {
 
           <div className={styles['artist-description']}>
           <div className={styles['icon']}>
-            <Image src={artist.src} width='100' height='100'/>
+            <Image src={artist.src} width='100' height='100' alt='Icon for the description for artists.'/>
           </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>View your recent artists</h1>
@@ -48,7 +48,7 @@ export default function Home() {
 
           <div className={styles['sound-description']}>
           <div className={styles['icon']}>
-            <Image src={sound.src} width='70' height='100'/>
+            <Image src={sound.src} width='70' height='100' alt='Icon for the description for songs.'/>
           </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>Preview your songs</h1>
@@ -58,7 +58,7 @@ export default function Home() {
 
           <div className={styles['link-description']}>
           <div className={styles['icon']}>
-            <Image src={link.src} width='75' height='100'/>
+            <Image src={link.src} width='75' height='100' alt='Icon for the description for links.'/>
           </div>
             <div className={styles['description']}>
               <h1 className={styles['title']}>Find your songs on Spotify</h1>
