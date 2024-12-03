@@ -12,6 +12,15 @@
   @apply w-1/3
 }
 
+@screen xs {
+  .tab {
+    @apply pt-16 text-2xl
+  }
+  .tab-terms {
+    @apply text-base my-4 text-wrap
+  }
+}
+
 @screen sm {
   .tab-title {
     @apply text-4xl pb-8;
@@ -22,13 +31,19 @@
   }
 
   .tab-terms {
-    @apply w-4/5;
+    @apply text-lg w-4/5;
+  }
+}
+
+@screen lg {
+  .tab-terms {
+    @apply text-2xl;
   }
 }
 
 @screen xl {
   .tab-title {
-    @apply text-2xl pb-12;
+    @apply text-5xl pb-12;
   }
 
   .tab {

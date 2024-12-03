@@ -9,14 +9,7 @@ import Track from '../../components/Track/Track';
 import Header from '../../components/Header/Header';
 import Tab from '../../components/Tab/Tab';
 
-import styles from '../../styles/Page.module.css'
-import { Montserrat } from 'next/font/google'
 import Head from 'next/head';
-
-const inter = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
 
 interface Track {
   name: string;
@@ -93,10 +86,10 @@ const TrackPage: React.FC<PageProps> = ({tracks}) => {
       <title>Statify - Top Tracks</title>
       <meta name="description" content="Explore your recently played tracks with Statify!" />
     </Head>
-    <div className={styles['grid']}>
+    <div>
     <Header/>
     <Tab onPeriodChange={handlePeriodChange}/>
-      <div className={styles['grid']}>
+      <div>
       {tracks.map((track, index) => (
         <div key={track.id}>
           <Track 

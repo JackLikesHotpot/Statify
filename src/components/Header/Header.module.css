@@ -19,16 +19,42 @@
   @apply flex text-center flex-wrap h-12 items-center
 }
 
-.nav-artists {
+.nav-artists, .nav-tracks {
   @apply w-28;
 }
 
-.nav-tracks {
-  @apply w-28;
+@screen xs {
+  .logo {
+    @apply text-base w-1/2;
+  }
+
+  .navbar {
+    @apply flex-nowrap pl-4
+  }
+  
+  .nav-artists, .nav-tracks {
+    @apply text-sm pr-8;
+  }
 }
 
 @screen sm {
   .logo {
     @apply text-xl w-1/2;
+  }
+}
+
+@screen md {
+  .nav-artists, .nav-tracks {
+    @apply text-lg pr-0;
+  }
+}
+
+@screen xl {
+    .nav-artists, .nav-tracks {
+      @apply text-xl px-24 text-nowrap;
+    }
+    
+  .logo {
+    @apply float-left w-1/6
   }
 }

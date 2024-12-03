@@ -1,6 +1,6 @@
 /* Footer.module.css */
 .footer {
-  @apply bg-gray-100 flex flex-row
+  @apply bg-gray-100 flex flex-row mt-auto
 }
 
 .left-section {
@@ -15,12 +15,31 @@
   @apply w-1/6 my-auto
 } 
 
+@screen xs {
+  .footer {
+    @apply text-xs
+  }
+  .repo, .linkedin {
+    @apply w-1/3
+  }
+}
+
 @screen sm {
   .footer {
-    @apply text-sm
+    @apply text-sm 
   }
 
   .repo, .linkedin {
     @apply w-1/4 
+  }
+}
+
+@screen lg {
+  .footer {
+    @apply text-base
+  }
+
+  .repo, .linkedin {
+    @apply w-1/6 my-auto
   }
 }

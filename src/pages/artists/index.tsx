@@ -10,13 +10,7 @@ import Artist from '../../components/Artist/Artist';
 import Tab from '../../components/Tab/Tab';
 
 import styles from '../../styles/Page.module.css'
-import { Montserrat } from 'next/font/google'
 import Head from 'next/head';
-
-const inter = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
 
 interface ProfileProps {
   profileName: string;
@@ -69,10 +63,10 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
       <title>Statify - Top Artists</title>
       <meta name="description" content="Explore your favourite artists with Statify!" />
     </Head>
-    <div className={styles['grid']}>
+    <div>
       <Header/>
       <Tab onPeriodChange={handlePeriodChange}/>
-        <div className={styles['grid']}>
+        <div>
         {artists.map((artist, index) => (
           <div key={artist.id}>
             <Artist

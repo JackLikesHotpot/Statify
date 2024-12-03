@@ -27,11 +27,16 @@
   @apply text-xs;
 }
 
-@screen sm {
+@screen xs {
   .artist-card {
-    @apply w-full;
+    @apply w-full
   }
+  .artist-name {
+    @apply text-xs
+  }
+}
 
+@screen sm {
   .tab {
     @apply pt-24
   }
@@ -41,6 +46,28 @@
   }
 
   .artist-name {
-    @apply text-xs;
+    @apply text-base;
+  }
+  .artist-genre {
+    @apply text-xs
+  }
+}
+
+@screen lg {
+  .artist-name {
+    @apply text-lg;
+  }
+  .artist-genre {
+    @apply text-sm
+  }
+}
+
+
+@screen xl {
+  .artist-name {
+    @apply text-xl
+  }
+  .artist-genre {
+    @apply text-sm
   }
 }

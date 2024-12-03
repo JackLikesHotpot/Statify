@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }) {
     <meta name="description" content="Discover your recently played tracks and favorite artists from Spotify." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
-  <div className="layout">
-    <Component {...pageProps} />;
+  <div className="layout min-h-screen flex flex-col">
+    <Component {...pageProps} />
     
     <Footer/>
   </div>

@@ -28,7 +28,7 @@ pnpm run dev
 - [x] View top tracks of x period
 - [x] Tab switcher to choose period
 - [x] Implement proper navigation bar
-- [ ] Create appropriate styles for mobile design
+- [x] Create appropriate styles for mobile design
 - [x] Style login page
 - [x] Style login button
 - [x] Fix styling by increasing white space so everything isn't together
@@ -36,9 +36,8 @@ pnpm run dev
 - [x] Navbar buttons should check if currently logged in and redirect accordingly
 - [x] Refine footer details
 - [x] Implement alternate font
-- [ ] Optimize fonts
-- [ ] Create media queries for devices less than 640px wide
-
+- [ ] Optimize fonts for tracks/artists pages
+- [x] Create media queries for devices less than 640px wide
 
 
 ![A preview image of the project can be seen here](https://i.imgur.com/e9OMVNB.png).

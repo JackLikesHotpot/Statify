@@ -27,11 +27,16 @@
   @apply flex w-1/5 justify-center items-center; 
 }
 
-@screen sm {
+@screen xs {
   .track-card {
-    @apply w-full;
+    @apply w-full
   }
+  .track-name {
+    @apply text-xs
+  }
+}
 
+@screen sm {
   .tab {
     @apply pt-24
   }
@@ -41,6 +46,24 @@
   }
 
   .track-name {
-    @apply text-xs;
+    @apply text-sm;
+  }
+}
+
+@screen lg {
+  .track-name {
+    @apply text-base;
+  }
+  .track-artist {
+    @apply text-sm
+  }
+}
+
+@screen xl {
+  .track-name {
+    @apply text-xl
+  }
+  .track-artist {
+    @apply text-sm
   }
 }
