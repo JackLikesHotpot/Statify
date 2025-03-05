@@ -1,4 +1,5 @@
 /* Artist.module.css */
+
 .artist-card {
   @apply flex text-black relative w-4/5 mx-auto justify-center min-h-12;
 }

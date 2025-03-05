@@ -1,5 +1,5 @@
 import styles from './Artist.module.css'
-import playbutton from '../../../public/assets/spotify_black.png'
+import playbutton from '../../../public/assets/spotify_black.svg'
 import Link from 'next/link'
 import Image from 'next/image'
 
