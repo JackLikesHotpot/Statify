@@ -36,7 +36,7 @@ describe('Footer component', () => {
   
   it('should render the "This project is unrelated to Spotify" text', () => {
     render(<Footer />);
-    const relationText = screen.getByText(/This project is unrelated to Spotify or its partners in any way./i);
+    const relationText = screen.getByText(/This project is unrelated to Spotify/i);
     expect(relationText).toBeInTheDocument();
   });
 

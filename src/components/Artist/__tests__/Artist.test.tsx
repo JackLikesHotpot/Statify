@@ -47,4 +47,11 @@ describe('Artist Component', () => {
     expect(artistGenre).toBeInTheDocument();
   })
 
+  it('should render the artist spotify button', () => {
+    render(<Artist {...mockProps}/>);
+    const artistPlay = screen.getAllByRole('img')
+
+    expect(artistPlay[artistPlay.length-1]).toHaveAttribute('alt', 'Play on Spotify');
+  })
+
 });
