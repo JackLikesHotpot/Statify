@@ -8,9 +8,12 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': './src/$1', 
     '\\.module\\.css$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/__mocks__/fileMock.js',
   },
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': 'ts-jest', 
+    '^.+\\.(ts|tsx|js|jsx)$': ['ts-jest', {
+      tsconfig: 'tsconfig.test.json',  // Pointing to the specific tsconfig for testing
+    }], 
   },
   collectCoverage: true, // Enables test coverage reporting
   collectCoverageFrom: [
