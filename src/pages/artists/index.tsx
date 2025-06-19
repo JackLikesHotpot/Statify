@@ -46,6 +46,7 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
   const router = useRouter();
   const { query } = router;
 
+  console.log(artists)
   const [period, setPeriod] = useState('Last 4 weeks')
 
   const handlePeriodChange = (newPeriod: string) => {

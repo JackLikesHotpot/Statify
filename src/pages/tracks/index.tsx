@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { GetServerSidePropsContext } from 'next';
 import { getProfile } from '../../hooks/getProfile'
 import { getTracks } from '../../hooks/getTracks';
+import { dummyTracks } from '../../../data/dummyData'
 
 import Track from '../../components/Track/Track';
 import Header from '../../components/Header/Header';
@@ -16,9 +17,10 @@ interface Track {
   id: string;
   uri: string;
   external_urls: Link;
-  album: Album;
+  album: string;
   duration_ms: number;
   preview_url: string;
+  artists: string[]
 }
 
 interface ProfileProps {
@@ -33,42 +35,14 @@ interface TrackProps {
 interface Link {
   spotify: string;
 }
-interface Image {
-  url: string;
-  width: number;
-  height: number;
-}
-
-interface Artist {
-  external_urls: { spotify: string };
-  href: string;
-  id: string;
-  name: string;
-  type: string;
-  uri: string;
-}
-interface Album {
-  album_type: string;
-  artists: Artist[];
-  available_markets: string[];
-  external_urls: { spotify: string };
-  href: string;
-  id: string;
-  images: Image[];
-  is_playable: boolean;
-  name: string;
-  release_date: string;
-  release_date_precision: string;
-  total_tracks: number;
-  type: string;
-  uri: string;
-}
 
 interface PageProps extends ProfileProps, TrackProps {}
 
-const TrackPage: React.FC<PageProps> = ({tracks}) => {
+const TrackPage: React.FC<PageProps> = ({}) => {
   const router = useRouter();
   const { query } = router;
+
+  const tracks = dummyTracks;
 
   const [period, setPeriod] = useState('Last 4 weeks')
 
@@ -91,14 +65,14 @@ const TrackPage: React.FC<PageProps> = ({tracks}) => {
     <Tab onPeriodChange={handlePeriodChange}/>
       <div>
       {tracks.map((track, index) => (
-        <div key={track.id}>
+        <div key={track.index}>
           <Track 
             trackName={track.name}
-            album={track.album}
             uri={track.uri}
             duration_ms={track.duration_ms}
-            preview={track.preview_url}
+            image={track.image}
             index={index}
+            artists={track.artists}
           />
         </div>
       ))}
