@@ -9,11 +9,8 @@ const Header = () => {
       <nav className={styles['header']}>
         <div className={styles['nav']}>
         <div className={styles['logo']}><Image src={logo.src} width='50' height='50' alt='The logo for the Statify website'/><Link className={styles['logo-name']} href='/'>Statify</Link></div>
-          <div className={styles['navbar']}>
-            <Link className={styles['nav-tracks']} href='/tracks'>Top Tracks</Link>
-            <Link className={styles['nav-artists']} href='/artists'>Top Artists</Link>
         </div>
-        </div>
+        <span className='text-sm'>Due to Spotify key limitations, I am unable to provide a website that uses your Spotify user data. <br></br>Please enjoy this website with dummy data instead.</span>
       </nav>
     </header>
   );
