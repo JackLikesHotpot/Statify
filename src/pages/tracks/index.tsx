@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/router';
 
 import { GetServerSidePropsContext } from 'next';
-import { getProfile } from '../../hooks/getProfile'
-import { getTracks } from '../../hooks/getTracks';
 import { dummyTracks } from '../../../data/dummyData'
 
 import Track from '../../components/Track/Track';
@@ -80,46 +78,6 @@ const TrackPage: React.FC<PageProps> = ({}) => {
     </div>
     </>
     );
-};
-
-const getTimePeriod = (period: string) => {
-  switch (period) {
-    case 'Last 4 weeks':
-      return 'short_term'
-    case 'Last 6 months':
-      return 'medium_term'
-    case 'Last 12 months':
-      return 'long_term'
-    default:
-      return 'short_term'
-  }
-}
-
-export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const { spotify_access_token } = context.req.cookies; 
-  const { period } = context.query
-
-  const time_period = Array.isArray(period) ? period[0] : period || 'Last 4 weeks'
-  const period_mean = getTimePeriod(time_period)
-  
-  if (!spotify_access_token) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
-  }
-
-  const profileInfo = await getProfile(context);
-  const tracks = await getTracks(context, period_mean);
-
-  return {
-    props: {
-      ...profileInfo.props,
-      ...tracks.props,
-    },
-  };
 };
   
 export default TrackPage;

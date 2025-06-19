@@ -87,44 +87,5 @@ const ArtistPage: React.FC<PageProps> = ({ }) => {
     </>
   );
 };
-
-const getTimePeriod = (period: string) => {
-  switch (period) {
-    case 'Last 4 weeks':
-      return 'short_term'
-    case 'Last 6 months':
-      return 'medium_term'
-    case 'Last 12 months':
-      return 'long_term'
-    default:
-      return 'short_term'
-  }
-}
-
-export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const { spotify_access_token } = context.req.cookies; 
-  const { period } = context.query
-
-  const time_period = Array.isArray(period) ? period[0] : period || 'Last 4 weeks'
-  const period_mean = getTimePeriod(time_period)
-  if (!spotify_access_token) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
-  }
-
-  const profileInfo = await getProfile(context);
-  const artists = await getArtists(context, period_mean);
-
-  return {
-    props: {
-      ...profileInfo.props,
-      ...artists.props,
-    },
-  };
-};
   
 export default ArtistPage;
