@@ -11,6 +11,7 @@ import Tab from '../../components/Tab/Tab';
 
 import styles from '../../styles/Page.module.css'
 import Head from 'next/head';
+import { dummyArtists } from '../../../data/dummyData';
 
 interface ProfileProps {
   profileName: string;
@@ -42,11 +43,11 @@ interface Link {
 
 interface PageProps extends ProfileProps, ArtistProps {}
 
-const ArtistPage: React.FC<PageProps> = ({artists }) => {
+const ArtistPage: React.FC<PageProps> = ({ }) => {
   const router = useRouter();
   const { query } = router;
 
-  console.log(artists)
+  const artists = dummyArtists;
   const [period, setPeriod] = useState('Last 4 weeks')
 
   const handlePeriodChange = (newPeriod: string) => {
@@ -74,9 +75,9 @@ const ArtistPage: React.FC<PageProps> = ({artists }) => {
               id={artist.id}
               index={index}
               name={artist.name}
-              image={artist.images && artist.images[1] ? artist.images[1].url : ``}
+              image={artist.image}
               genres={artist.genres}
-              uri={artist.external_urls.spotify}
+              uri={artist.uri}
               />
           </div>
         ))}

@@ -181,4 +181,145 @@ export const dummyTracks = [
   },
 ];
 
-export const dummyArtists = []
+export const dummyArtists = [
+  {
+    id: "1",
+    name: "Imagine Dragons",
+    image: "https://i.scdn.co/image/ab67616d00001e025675e83f707f1d7271e5cf8a",
+    genres: ["pop rock", "alternative"],
+    uri: "spotify:artist:53XhwfbYqKCa1cC15pYq2q"
+  },
+  {
+    id: "2",
+    name: "Rihanna",
+    image: "https://i.scdn.co/image/ab67616d00001e02bef074de9ca825bddaeb9f46",
+    genres: ["pop", "r&b"],
+    uri: "spotify:artist:5pKCCKE2ajJHZ9KAiaK11H"
+  },
+  {
+    id: "3",
+    name: "Lil Uzi Vert",
+    image: "https://i.scdn.co/image/ab67616d00001e02d7e1c68ed8e464b03095afda",
+    genres: ["hip hop", "trap"],
+    uri: "spotify:artist:4O15NlyKLIASxsJ0PrXPfz"
+  },
+  {
+    id: "4",
+    name: "Joji",
+    image: "https://i.scdn.co/image/ab67616d00001e02f733e50079838090eebc3fe4",
+    genres: ["lo-fi", "r&b", "alternative"],
+    uri: "spotify:artist:3MZsBdqDrRTJihTHQrO6Dq"
+  },
+  {
+    id: "5",
+    name: "Billie Eilish",
+    image: "https://i.scdn.co/image/ab67616d00001e0271d62ea7ea8a5be92d3c1f62",
+    genres: ["electropop", "indie pop"],
+    uri: "spotify:artist:6qqNVTkY8uBg9cP3Jd7DAH"
+  },
+  {
+    id: "6",
+    name: "Kendrick Lamar",
+    image: "https://i.scdn.co/image/ab67616d00001e021ea0c62b2339cbf493a999ad",
+    genres: ["hip hop", "rap", "conscious rap"],
+    uri: "spotify:artist:2YZyLoL8N0Wb9xBt1NhZWg"
+  },
+  {
+    id: "7",
+    name: "Drake",
+    image: "https://i.scdn.co/image/ab67616d00001e02cc392813bfd8f63d4d5f4a95",
+    genres: ["hip hop", "pop rap"],
+    uri: "spotify:artist:3TVXtAsR1Inumwj472S9r4"
+  },
+  {
+    id: "8",
+    name: "The Weeknd",
+    image: "https://i.scdn.co/image/ab67616d00001e02982320da137d0de34410df61",
+    genres: ["r&b", "pop", "electropop"],
+    uri: "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+  },
+  {
+    id: "9",
+    name: "Taylor Swift",
+    image: "https://i.scdn.co/image/ab67616d00001e0295f754318336a07e85ec59bc",
+    genres: ["pop", "country", "folk"],
+    uri: "spotify:artist:06HL4z0CvFAxyc27GXpf02"
+  },
+  {
+    id: "10",
+    name: "Doja Cat",
+    image: "https://i.scdn.co/image/ab67616d00001e02be841ba4bc24340152e3a79a",
+    genres: ["pop rap", "r&b", "trap"],
+    uri: "spotify:artist:5cj0lLjcoR7YOSnhnX0Po5"
+  },
+  {
+    id: "11",
+    name: "SZA",
+    image: "https://i.scdn.co/image/ab67616d00001e0270dbc9f47669d120ad874ec1",
+    genres: ["r&b", "neo soul"],
+    uri: "spotify:artist:7tYKF4w9nC0nq9CsPZTHyP"
+  },
+  {
+    id: "12",
+    name: "Post Malone",
+    image: "https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02",
+    genres: ["rap", "pop", "trap"],
+    uri: "spotify:artist:246dkjvS1zLTtiykXe5h60"
+  },
+  {
+    id: "13",
+    name: "Travis Scott",
+    image: "https://i.scdn.co/image/ab67616d00001e02f54b99bf27cda88f4a7403ce",
+    genres: ["hip hop", "trap"],
+    uri: "spotify:artist:0Y5tJX1MQlPlqiwlOH1tJY"
+  },
+  {
+    id: "14",
+    name: "Olivia Rodrigo",
+    image: "https://i.scdn.co/image/ab67616d00001e02a91c10fe9472d9bd89802e5a",
+    genres: ["pop", "teen pop"],
+    uri: "spotify:artist:1McMsnEElThX1knmY4oliG"
+  },
+  {
+    id: "15",
+    name: "Lana Del Rey",
+    image: "https://i.scdn.co/image/ab67616d00001e02ebc8cfac8b586bc475b04918",
+    genres: ["indie", "dream pop"],
+    uri: "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+  },
+  {
+    id: "16",
+    name: "Bad Bunny",
+    image: "https://i.scdn.co/image/ab67616d00001e02bbd45c8d36e0e045ef640411",
+    genres: ["reggaeton", "latin trap"],
+    uri: "spotify:artist:4q3ewBCX7sLwd24euuV69X"
+  },
+  {
+    id: "17",
+    name: "Frank Ocean",
+    image: "https://i.scdn.co/image/ab67616d00001e02c5649add07ed3720be9d5526",
+    genres: ["r&b", "soul", "alternative r&b"],
+    uri: "spotify:artist:2h93pZq0e7k5yf4dywlkpM"
+  },
+  {
+    id: "18",
+    name: "Adele",
+    image: "https://i.scdn.co/image/ab67616d00001e02164feb363334f93b6458d2a9",
+    genres: ["soul", "pop", "adult contemporary"],
+    uri: "spotify:artist:4dpARuHxo51G3z768sgnrY"
+  },
+  {
+    id: "19",
+    name: "Tyler, The Creator",
+    image: "https://i.scdn.co/image/ab67616d00001e02124e9249fada4ff3c3a0739c",
+    genres: ["hip hop", "alternative"],
+    uri: "spotify:artist:4V8LLVI7PbaPR0K2TGSxFF"
+  },
+  {
+    id: "20",
+    name: "Kali Uchis",
+    image: "https://i.scdn.co/image/ab67616d00001e02044a5466dac00f7b3c570b99",
+    genres: ["r&b", "indie pop", "latin"],
+    uri: "spotify:artist:1U1el3k54VvEUzo3ybLPlM"
+  }
+];
