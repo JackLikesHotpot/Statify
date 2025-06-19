@@ -20,7 +20,7 @@ export default function Home() {
       <div className={styles['space']}/>
       <div className={styles['container']}>
       <title className={styles['heading']}>Statify</title>
-        <button className={styles['button']} onClick={() => router.push('/api/login')}>Try it out!</button>
+        <button className={styles['button']} onClick={() => router.push('/tracks')}>Try it out!</button>
       </div>
       
       <div className='pt-24'/>
